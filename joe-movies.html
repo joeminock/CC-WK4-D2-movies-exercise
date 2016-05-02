@@ -65,9 +65,9 @@
 			function splitUserRow(stringUser) { //Split user Rows into separate Strings
 				return stringUser.split(" "); //Separate user strings at spaces
 			}
-			console.log( splitUserRow(testRentals[0]) [0] == "User5");
-			console.log( splitUserRow(testRentals[0]) [1] == "44");
-			console.log( splitUserRow(testRentals[0]) [2] == "July");
+			console.log( splitUserRow(testRentals[0]) [0] == "User5"); //User string
+			console.log( splitUserRow(testRentals[0]) [1] == "44"); //Movie ID string
+			console.log( splitUserRow(testRentals[0]) [2] == "July"); //Month string
 			
 			//testRentals = testRentals.map(splitUserRow);
 			
@@ -114,8 +114,25 @@
 				return getKeyWithMaxValue(counts);
 			}
 			
+			function getMonthWithMostCheckouts(rentals) {
+				var counts = {};
+				var rentalsAsArrays = splitRentalString(rentals);
+				for (var i = 0; i < rentalsAsArrays.length; i++){
+					debugger;
+					var userNum = rentalsAsArrays[i][2];
+					
+					if (counts[userNum] == undefined) {
+						counts[userNum] = 1;
+					} else {
+						counts[userNum] += 1;
+					}
+				}
+				
+				return getKeyWithMaxValue(counts);
+			}
+			
 			console.log(getUserWithMostCheckouts(testRentals) == "User5");
-//			console.log(getMonthWithMostCheckouts(testRentals) == "July");
+			console.log(getMonthWithMostCheckouts(testRentals) == "July");
 
 			//Which user had the most checkouts.
 			var maxUser = getUserWithMostCheckouts(rentalsArray);

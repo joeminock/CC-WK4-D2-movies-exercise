@@ -55,15 +55,15 @@
 			
 			//console.log(rentalsArray);
 			
-			var testRentals = [
+			var testRentals = [   // Tests to pass or fail
 				"User5 44 July",
 				"User5 36 June",
 				"User7 12 May",
 				"User8 13 July"
 			];
 			
-			function splitUserRow(stringUser) {
-				return stringUser.split(" ");
+			function splitUserRow(stringUser) { //Split user Rows into separate Strings
+				return stringUser.split(" "); //Separate user strings at spaces
 			}
 			console.log( splitUserRow(testRentals[0]) [0] == "User5");
 			console.log( splitUserRow(testRentals[0]) [1] == "44");
